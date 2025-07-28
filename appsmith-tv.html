@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scrolling Dashboard</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; }
+      iframe { width: 100vw; height: 100vh; border: none; }
+    </style>
+  </head>
+  <body>
+    <iframe id="dash" src="https://app.appsmith.com/app/monthly-line-move-dashboard-autoscroll/page1-6880bd7cf99c9f7cc177c984"></iframe>
+    <script>
+      const scrollFrame = () => {
+        const iframe = document.getElementById("dash");
+        try {
+          iframe.contentWindow.scrollBy(0, 1);
+        } catch (e) {
+          console.warn('Scroll failed:', e);
+        }
+      };
+      setInterval(scrollFrame, 100);
+    </script>
+  </body>
+</html>
